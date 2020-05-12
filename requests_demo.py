@@ -9,7 +9,7 @@ def get_method(url):
     header = {
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'}
     responses = requests.get(url, header)
-    # 重新设置编码，保障部乱码
+    # 重新设置编码，保证不乱码
     responses.encoding = responses.apparent_encoding
     responses = responses.text
     html = BeautifulSoup(responses, 'html5lib')
@@ -22,7 +22,7 @@ def post_method(url):
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'}
     params={"name":ccc}
     responses = requests.get(url,data=params,headers=headers)
-    # 重新设置编码，保障部乱码
+    # 重新设置编码，保证不乱码
     responses.encoding = responses.apparent_encoding
     responses = responses.text
     html = BeautifulSoup(responses, 'html5lib')
@@ -33,7 +33,7 @@ def get_with_cookie():
     cookies = {'JSESSIONID': 'abclb5hQxbM3Zd-ZT1Ghw', 'Hm_lpvt_694e61985b4752f4e7a0e5223195635f': '1519954736',
                    'Hm_lvt_694e61985b4752f4e7a0e5223195635f': '1519895511'}
     response = requests.get("http://baidu.com", data=params,cookies=cookies)
-    # 重新设置编码，保障部乱码
+    # 重新设置编码，保证不乱码
     responses.encoding = responses.apparent_encoding
     responses = responses.text
     html = BeautifulSoup(responses, 'html5lib')
